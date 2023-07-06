@@ -4,6 +4,7 @@ A project designed to register college courses. Designed with Domain Driven Desi
 # Tech stack used
   - Spring boot (Backend)
   - PostgresSql (Database)
+  - JUnit & Rest Assured (Testing)
   - Angular (Frontend) 
 
 # System Requirements 
