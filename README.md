@@ -1,5 +1,10 @@
 # Course-Management-System
-A project designed to manage college courses. Designed with Domain Driven Design (DDD).
+A project designed to register college courses. Designed with Domain Driven Design (DDD).
+
+# Tech stack used
+  - Spring boot (Backend)
+  - PostgresSql (Database)
+  - Angular (Frontend) 
 
 # System Requirements 
 
