@@ -12,4 +12,5 @@ import java.util.List;
 public class Student extends Person {
     private String studentId;
     private List<CourseOffering> courseOfferingList;
+
 }
