@@ -1,4 +1,4 @@
-package com.miu.CourseMgtSys.domain;
+package com.miu.CourseMgtSys.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class Instructor extends Person {
     private long Id;
     private String instructorId;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "instructor_offering_day")
     private List<CourseOfferingDay> courseOfferingDayList = new ArrayList<>();
 

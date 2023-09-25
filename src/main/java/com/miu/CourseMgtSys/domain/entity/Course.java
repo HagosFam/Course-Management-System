@@ -1,4 +1,4 @@
-package com.miu.CourseMgtSys.domain;
+package com.miu.CourseMgtSys.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,10 +24,10 @@ public class Course {
     private String nrOfDays;
     private float price;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "course_prerequisite_id")
     private List<Course> preRequisite = new ArrayList<>();
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_course_offering")
    private List<CourseOffering> courseOfferings = new ArrayList<>();
 }

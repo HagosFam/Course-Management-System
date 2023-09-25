@@ -1,4 +1,4 @@
-package com.miu.CourseMgtSys.domain;
+package com.miu.CourseMgtSys.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

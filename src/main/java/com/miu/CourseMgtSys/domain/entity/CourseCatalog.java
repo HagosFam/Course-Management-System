@@ -1,9 +1,10 @@
-package com.miu.CourseMgtSys.domain;
+package com.miu.CourseMgtSys.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,17 +20,8 @@ public class CourseCatalog {
     private long id;
     private String courseCatalogName;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "course_catalog_course")
     private List<Course> courseList = new ArrayList<>();
 
-    // search course method
-//    public static Course searchCourse(String courseId) {
-//       for (Course course:courseList){
-//           if(course.getCourseId().equals(courseId)) {
-//               return course;
-//           }
-//       }
-//       return null;
-//    }
 }

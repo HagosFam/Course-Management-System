@@ -1,4 +1,4 @@
-package com.miu.CourseMgtSys.domain;
+package com.miu.CourseMgtSys.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,10 +18,7 @@ public class Student extends Person {
     private long Id;
 
     private String studentId;
-    @ManyToMany
-    @JoinTable(name = "student_offering",
-            joinColumns = {@JoinColumn(name = "Student_Id")},
-            inverseJoinColumns = {@JoinColumn(name = "Course_Offering_Id")})
-    private List<CourseOffering> courseOfferingList = new ArrayList<>();
+    @ManyToMany(mappedBy = "students", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    private List<CourseOffering> courseOfferings;
 
 }
