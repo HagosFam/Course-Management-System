@@ -13,7 +13,7 @@ public class Location {
     @Id
     @GeneratedValue
     private long Id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_address")
     private Address address;
 }

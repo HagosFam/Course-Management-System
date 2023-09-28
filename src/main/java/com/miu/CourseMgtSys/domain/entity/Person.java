@@ -18,7 +18,8 @@ public class Person {
     private String phone;
     private String email;
 
-    @ManyToOne
+    // make ManyToOne relations lazy, use join fetch to load the related object
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "person_address")
     private Address address;
 

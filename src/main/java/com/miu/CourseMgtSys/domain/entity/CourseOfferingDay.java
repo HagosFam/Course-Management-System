@@ -17,11 +17,11 @@ public class CourseOfferingDay {
     private long Id;
     private Date date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_offering_instructor")
     private Instructor instructor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_offering_location")
     private Location location;
 
